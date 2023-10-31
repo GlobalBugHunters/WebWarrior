@@ -1,0 +1,25 @@
+When the user selects Option 1. Do the following;
+
+RECON WORK {recon_work} FUNCTIONS
+clear screen
+print (orange text color) {app_name}
+wait 1 second
+print (blue text color) I see you have a desire to do some recon work! That is awesome! I can help you with this easily!
+wait 1 second
+Now we will check for a global variable {target} to see if the user has input a target already.
+If {target} is stored;
+ask in blue text color "Do you want to use the stored target {target}?" Allow the user to answer with "Yes" or "Y" or "No" or "N". Have the user input in green text color.
+If they say yes, then proceed to {recon_menu} functions.
+If they say no, ask in blue text color "May I please have the Target URL or IP we are going after?" and have the user input in green text color.
+then store the input as the global variable {target}. 
+Print (blue text color) I have successfully stored your target (red text color) {target} (blue text color) and we are ready to begin!
+wait 2 seconds
+display {recon_menu} functions
+
+RECON MENU {recon_menu} FUNCTIONS
+clear screen
+print (orange text color) {app_name}
+wait 1 second
+print (red text color) Recon Work
+wait 1 second
+print (blue text color) 
