@@ -157,7 +157,7 @@ def recon_work():
         else:
             target = input(Fore.BLUE + f"Tell me hacker {user_name}... Who are we going after now?\n"
                             f"You can use one of the following examples:\n"
-                            f"(https://target.com | http://target.com | 192.168.0.1 | http://192.168.0.1 | https://192.168.0.1)\n"
+                            f"(target.com | 192.168.0.1)\n"
                             f"I just need something that is online & active to lock onto! " + Fore.GREEN)
             print_colored(f"I have locked onto the target! We are now going after... {target}", Fore.BLUE)
             sleep(2)
@@ -165,7 +165,7 @@ def recon_work():
     else:
         target = input(Fore.BLUE + f"Tell me hacker {user_name}... Who are we going after now?\n"
                         f"You can use one of the following examples:\n"
-                        f"(https://target.com | http://target.com | 192.168.0.1 | http://192.168.0.1 | https://192.168.0.1)\n"
+                        f"(target.com | 192.168.0.1)\n"
                         f"I just need something that is online & active to lock onto! " + Fore.GREEN)
         print_colored(f"I have locked onto the target! We are now going after... {target}", Fore.BLUE)
         sleep(2)
