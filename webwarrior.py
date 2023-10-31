@@ -28,6 +28,31 @@ def intro_screen():
     sleep(1)
     print("\033c")  # Clear screen
 
+# Define current_version
+current_version = "1.0"
+
+# Function to check for updates
+def check_for_updates(current_version):
+    repo_url = "https://github.com/GlobalBugHunters/WebWarrior/releases/latest"
+    
+    try:
+        response = requests.get(repo_url)
+        data = response.json()
+        
+        # Parse the latest version from GitHub response
+        latest_version = data["tag_name"]
+        
+        if latest_version > current_version:
+            return latest_version
+        else:
+            return None
+    except Exception as e:
+        print("Failed to check for updates:", str(e))
+        return None
+
+# Check for updates
+latest_version = check_for_updates(current_version)
+
 # Function for the main menu
 def main_menu():
     print("\033c")  # Clear screen
@@ -39,6 +64,10 @@ def main_menu():
     sleep(1)
     print_colored(f"Developed By: {dev_name}", Fore.GREEN)
     sleep(1)
+    print_colored(f"Version: {current_version}", Fore.YELLOW)
+    sleep(1)
+    print_colored(F"Latest Version: {latest_version}", Fore.CYAN)
+    sleep(1)
     print_colored("Main Menu", Fore.RED)
     sleep(1)
     print(Fore.YELLOW + "")
@@ -48,12 +77,15 @@ def main_menu():
     print("4) Server Auditing")
     print("5) Android Auditing")
     print("6) iOS Auditing")
+    print("7) Check for Updates")
     print("0) Exit Application")
 
     choice = input("Enter your choice: ")
 
     if choice == '1':
        recon_work()
+    elif choice == '7':
+       check_for_updates()
     elif choice == '0':
        exit_program()
 
@@ -207,6 +239,8 @@ def recon_menu():
 def clear_screen():
     import os
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
 
 # Constants
 app_name = """
